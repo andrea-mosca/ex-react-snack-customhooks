@@ -1,6 +1,10 @@
+import useDate from "./custom_hooks/useDate";
 import useSwitch from "./custom_hooks/useSwitch";
-function App() {
+
+export default function App() {
   const { isOn, toggle } = useSwitch();
+  const currentDate = useDate();
+
   return (
     <div className="container">
       <section>
@@ -10,8 +14,10 @@ function App() {
           cambia stato
         </button>
       </section>
+      <section>
+        <h2>SNACK 2: useDate</h2>
+        <p>Data e ora attuali: {currentDate.toLocaleString()}</p>
+      </section>
     </div>
   );
 }
-
-export default App;
